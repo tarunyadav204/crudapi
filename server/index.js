@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 //app.use(cors());
 app.use(cors({
     origin: '*', // Allow requests from this origin
+    methods: ['GET', 'POST'], // Allow these HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // Allow these headers
 
 }));
 // app.use(cors())
