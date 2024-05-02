@@ -23,10 +23,10 @@ mongoose.connect(URL).then(() => {
 }).catch(err => {
     console.log(err);
 });
-
+/*
 app.use("/", (req, res) => {
     res.json({ success: "true", msg: "Api is working" })
-})
+})*/
 app.use("/api", route)
 
 const __dirname1 = path.resolve();
