@@ -8,7 +8,12 @@ import path from 'path';
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+    origin: '*', // Allow requests from this origin
+
+}));
+// app.use(cors())
 dotenv.config();
 
 //const PORT = process.env.PORT || 4050;
