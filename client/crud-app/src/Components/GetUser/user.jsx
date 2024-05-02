@@ -6,11 +6,12 @@ import { toast } from 'react-toastify';
 const User = () => {
 
     const [lists, setLists] = useState([]);
-
+    const URL = "https://crudapi-backend.vercel.app/";
 
     const getUsers = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/read`);
+            //const response = await axios.get(`http://localhost:3000/api/read`);
+            const response = await axios.get(`${URL}/api/read`);
             const data = await response.data;
             setLists(data);
         }
@@ -21,7 +22,7 @@ const User = () => {
 
     const handelDelete = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:3000/api/${id}`);
+            const response = await axios.delete(`${URL}/api/${id}`);
             const data = await response.data;
             setLists((prevUser) => prevUser.filter((user) => user._id !== id));
             console.log("Successfully Deleted User", data);

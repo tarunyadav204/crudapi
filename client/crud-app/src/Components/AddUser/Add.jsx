@@ -12,7 +12,7 @@ const Add = () => {
     email: "",
     password: ""
   });
-
+  const URL = "https://crudapi-backend.vercel.app/";
   const handelChange = (e) => {
     setdata({ ...userData, [e.target.name]: e.target.value });
   }
@@ -21,8 +21,8 @@ const Add = () => {
     e.preventDefault();
     //  JSON.stringify(userData);
     try {
-      const response = await axios.post('http://localhost:3000/api/create', userData);
-      //const response = await axios.post(`${window.location.origin}/api/create`, userData);
+      //const response = await axios.post('http://localhost:3000/api/create', userData);
+      const response = await axios.post(`${URL}/api/create`, userData);
       const data = await response.data;
       //toast.success(data.msg, { position: 'top-left' });    
       navigate("/");
